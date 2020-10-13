@@ -31,12 +31,50 @@
           </button>
         </div>
         <div class="modal-body">
-          ...
+            <form action="/listdata/create" method="POST">
+                @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">NIK</label>
+                  <input type="number" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                  
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Kecamatan</label>
+                  <input type="text" name="kecamatan" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Desa</label>
+                  <input type="text" name="desa" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Alamat</label>
+                  <input type="text" name="alamat" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nama</label>
+                  <input type="text" name="nama" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Kondisi Atap</label>
+                  <input type="number" name="kondisi_atap" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Kondisi Lantai</label>
+                  <input type="number" name="kondisi_lantai" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Kondisi Dinding</label>
+                  <input type="number" name="kondisi_dinding" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Penghasilan</label>
+                  <input type="number" name="penghasilan" class="form-control" id="exampleInputPassword1">
+                </div>             
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
+    </form>
       </div>
     </div>
   </div>

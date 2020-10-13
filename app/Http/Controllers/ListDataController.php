@@ -23,9 +23,12 @@ class ListDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        ListData::create($request->all());
+        return redirect('/');
+        // return $request->all();
     }
 
     /**
@@ -82,5 +85,6 @@ class ListDataController extends Controller
     public function destroy($id)
     {
         //
+       
     }
 }

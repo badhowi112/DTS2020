@@ -26,6 +26,7 @@ class CreateTableListData extends Migration
             $table->bigInteger('penghasilan');
             $table->timestamps();
         });
+       
     }
 
     /**
