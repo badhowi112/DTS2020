@@ -5,5 +5,5 @@
 4. setelah itu buka folder laravelnya lalu klik kanan git bash here<br/>
 5. kemudian ketikan composer install dan tunggu sampai selesai<br/>
 6. rename file .env.example menjadi .env<br/>
-8. lalu ketik php artisan migrate
+8. pastikan apache dan mysql sudah hidup di xampp lalu ketik php artisan migrate<br/>
 7. terakhir ketikan php artisan serve
