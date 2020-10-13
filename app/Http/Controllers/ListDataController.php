@@ -62,6 +62,9 @@ class ListDataController extends Controller
     public function edit($id)
     {
         //
+        $data_warga = ListData::find($id);
+        return view('ListData.edit',compact('data_warga'));
+        // dd($data_warga);
     }
 
     /**
@@ -74,17 +77,23 @@ class ListDataController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data_warga = ListData::find($id);
+        $data_warga->update($request->all());
+        return redirect('/');
     }
 
+    
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         //
-       
+       $data_warga = ListData::find($id);
+       $data_warga->delete($data_warga);
+       return redirect('/');
     }
 }

@@ -107,8 +107,9 @@
                               <td>{{$item->kondisi_atap}}</td>
                               <td>{{$item->kondisi_lantai}}</td>
                               <td>{{$item->kondisi_dinding}}</td>
-                              <td>{{$item->penghasilan}}</td>
-                              <td></td>
+                              <td>{{$item->penghasilan}}</td>                              
+                              <td><a href="/listdata/{{$item->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+                              <td><a href="/listdata/{{$item->id}}/delete" class="btn btn-danger btn-sm">Delete</a></td>
                                 </tr>
                                 @endforeach
                           </tbody>

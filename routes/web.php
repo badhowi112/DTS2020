@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/','ListDataController@index');
 Route::post('/listdata/create','ListDataController@create');
+Route::post('/listdata/{id}/update','ListDataController@update');
+Route::get('/listdata/{id}/edit','ListDataController@edit');
+Route::get('/listdata/{id}/delete','ListDataController@delete');
