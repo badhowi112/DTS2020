@@ -92,6 +92,7 @@
                               <th scope="col">KONDISI LANTAI</th>
                               <th scope="col">KONDISI DINDING</th>
                               <th scope="col">PENGHASILAN</th>
+                              <th scope="col">AKSI</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -107,6 +108,7 @@
                               <td>{{$item->kondisi_lantai}}</td>
                               <td>{{$item->kondisi_dinding}}</td>
                               <td>{{$item->penghasilan}}</td>
+                              <td></td>
                                 </tr>
                                 @endforeach
                           </tbody>
