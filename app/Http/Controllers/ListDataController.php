@@ -27,7 +27,7 @@ class ListDataController extends Controller
     {
         //
         ListData::create($request->all());
-        return redirect('/');
+        return redirect('/listdata');
         // return $request->all();
     }
 
@@ -79,7 +79,7 @@ class ListDataController extends Controller
         //
         $data_warga = ListData::find($id);
         $data_warga->update($request->all());
-        return redirect('/');
+        return redirect('/listdata');
     }
 
     
@@ -94,6 +94,6 @@ class ListDataController extends Controller
         //
        $data_warga = ListData::find($id);
        $data_warga->delete($data_warga);
-       return redirect('/');
+       return redirect('/listdata');
     }
 }

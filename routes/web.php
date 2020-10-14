@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/','ListDataController@index');
+Route::get('/','BerandaController@index');
+Route::get('/listdata','ListDataController@index');
 Route::post('/listdata/create','ListDataController@create');
 Route::post('/listdata/{id}/update','ListDataController@update');
 Route::get('/listdata/{id}/edit','ListDataController@edit');
 Route::get('/listdata/{id}/delete','ListDataController@delete');
+
