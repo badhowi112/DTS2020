@@ -16,10 +16,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/','BerandaController@index');
-Route::get('/listdata','ListDataController@index');
-Route::post('/listdata/create','ListDataController@create');
-Route::post('/listdata/{id}/update','ListDataController@update');
-Route::get('/listdata/{id}/edit','ListDataController@edit');
-Route::get('/listdata/{id}/delete','ListDataController@delete');
+Route::get('/','loginController@index')->name('login');
+Route::post('/postlogin','loginController@postlogin');
+Route::get('/logout','loginController@logout');
+Route::group(['middleware' => 'auth'],function(){
+
+    Route::get('/beranda','BerandaController@index');
+    Route::get('/listdata','ListDataController@index');
+    Route::get('/validasi','validasiController@index');
+    Route::post('/validasi/data','validasiController@Data');
+    Route::post('/listdata/create','ListDataController@create');
+    Route::post('/listdata/{id}/update','ListDataController@update');
+    Route::get('/listdata/{id}/edit','ListDataController@edit');
+    Route::get('/listdata/{id}/delete','ListDataController@delete');
+});
 

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-class BerandaController extends Controller
+use Auth;
+class loginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,20 @@ class BerandaController extends Controller
     public function index()
     {
         //
-        $data_warga = DB::select('select count(id) as hasil from listdata');
-        $mampu = DB::select('select count(keterangan) as hasi from listdata where keterangan = "mampu"');
-        $tidak_mampu = DB::select('select count(keterangan) as has from listdata where keterangan = "tidak mampu"');
-        return view('beranda.index',compact('data_warga','mampu','tidak_mampu'));
+        return view('auth.login');
+    }
+    public function postlogin(Request $request)
+    {
+        // dd($request->all());
+        if(Auth::attempt($request->only('name','password'))){
+            return redirect('/beranda');
+        }
+        return redirect('/');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 
     /**

@@ -26,6 +26,12 @@ class ListDataController extends Controller
     public function create(Request $request)
     {
         //
+        $this->validate($request,[
+            'nik' => 'required|numeric|unique:listdata,nik|min:16'
+        ],[
+            'nik.unique' => 'NIK Sudah Ada Di DATABASE',
+            'nik.min' => 'Jumlah NIK Harus 16 Digit'
+        ]);
         ListData::create($request->all());
         return redirect('/listdata');
         // return $request->all();
